@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 void main() {
   runApp(const MyApp());
@@ -35,13 +36,22 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: const Center(
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              'Boas-vindas!',
+            SvgPicture.asset('assets/images/logo.svg'),
+            const SizedBox(height: 20),
+            const SizedBox(
+              width: 120,
+              height: 120,
+              child: CircleAvatar(
+                radius: 50.0,
+                backgroundImage: AssetImage('assets/images/avatar.png'),
+              ),
             ),
+            const SizedBox(height: 20),
+            const Text('Boas-vindas!'),
           ],
         ),
       ),
